@@ -33,7 +33,7 @@ class HtmlHelper implements Htmlable
                     $classArray[] = $arg;
                     break;
                 case 'array':
-                    $classArray = array_merge($classArray, array_filter(array_flatten($arg)));
+                    $classArray = array_merge($classArray, $arg);
                     break;
                 case 'NULL':
                     break;
@@ -42,7 +42,7 @@ class HtmlHelper implements Htmlable
                                         . gettype($arg) . ' type given for « ' . $arg . ' » argument.');
             }
         }
-        $classArray = array_map('trim', $classArray);
+        $classArray = array_map('trim', array_filter(array_flatten($classArray)));
         $this->htmlString = new HtmlString('class="' . implode(' ', $classArray) . '"');
 
         return $this;

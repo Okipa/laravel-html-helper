@@ -15,6 +15,7 @@ class ClassTagTest extends HtmlhelperTestCase
             'class1',
             ['class2', 'class3', null],
             null,
+            '',
             ['class4', ['class5 ', 'class6Key' => 'class6']],
             7
         );
