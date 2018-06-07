@@ -42,7 +42,7 @@ class HtmlHelper implements Htmlable
                                         . gettype($arg) . ' type given for « ' . $arg . ' » argument.');
             }
         }
-
+        $classArray = array_map('trim', $classArray);
         $this->htmlString = new HtmlString('class="' . implode(' ', $classArray) . '"');
 
         return $this;
