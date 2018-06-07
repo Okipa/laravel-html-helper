@@ -31,24 +31,24 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
 
 ## API
 
-##### `public function renderClass(...$classList) : string`
+##### `public function generateClassHtmlTag(...$classList) : \Okipa\LaravelHtmlHelper\HtmlHelper`
 Render a html class tag filled with the given class list .  
-Associated helper : `renderClass()`.
+Associated helper : `classTag()`.
 
 ```php
 // in your html
-<div renderClass([
+<div {{ classTag([
     'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
-], 'another-class')></div>
+], 'another-class') }}></div>
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>
 
 // in your code
 public function someMethod()
 {
-    return (string) '<div' . app(\Okipa\LaravelHtmlHelper::class)->renderClass([
+    return (string) '<div' . app(\Okipa\LaravelHtmlHelper::class)->generateClassHtmlTag([
         'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
-    ], 'another-class') . '></div>'
+    ], 'another-class')->render() . '></div>'
 }
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>

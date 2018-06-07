@@ -1,8 +1,8 @@
 <?php
 
-if (! function_exists('renderClass')) {
-    function renderClass(...$classList)
+if (! function_exists('classTag')) {
+    function classTag(...$classList)
     {
-        return app(\Okipa\LaravelHtmlHelper\HtmlHelper::class)->renderClass(...$classList);
+        return app(\Okipa\LaravelHtmlHelper\HtmlHelper::class)->generateClassHtmlTag(...$classList)->render();
     }
 }

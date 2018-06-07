@@ -3,17 +3,27 @@
 namespace Okipa\LaravelHtmlHelper;
 
 use Exception;
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\HtmlString;
 
-class HtmlHelper
+class HtmlHelper implements Htmlable
 {
     /**
-     * Render a html class tag filled with the given class list
+     * The generated html string.
+     *
+     * @property string $htmlString
+     */
+    protected $htmlString;
+
+    /**
+     * Render a html class tag filled with the given class list.
+     *
      * @param mixed ...$classList
      *
-     * @return string
+     * @return \Okipa\LaravelHtmlHelper\HtmlHelper
      * @throws \Exception
      */
-    public function renderClass(...$classList) : string
+    public function generateClassHtmlTag(...$classList): HtmlHelper
     {
         $classArray = [];
         foreach (func_get_args() as $arg) {
@@ -33,6 +43,28 @@ class HtmlHelper
             }
         }
 
-        return (string) 'class="' . implode(' ', $classArray) . '"';
+        $this->htmlString = new HtmlString('class="' . implode(' ', $classArray) . '"');
+
+        return $this;
+    }
+
+    /**
+     * Get content as a string of HTML.
+     *
+     * @return string
+     */
+    public function toHtml()
+    {
+        return (string) $this->htmlString;
+    }
+
+    /**
+     * Render the html string.
+     *
+     * @return mixed
+     */
+    public function render()
+    {
+        return $this->htmlString;
     }
 }

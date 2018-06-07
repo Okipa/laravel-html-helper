@@ -7,11 +7,11 @@ use Exception;
 use Okipa\LaravelHtmlHelper\Test\HtmlhelperTestCase;
 use stdClass;
 
-class RenderClassTest extends HtmlhelperTestCase
+class ClassTagTest extends HtmlhelperTestCase
 {
     public function testSuccessRenderHtmlClass()
     {
-        $html = renderClass(
+        $html = classTag(
             'class1',
             ['class2', 'class3', null],
             null,
@@ -27,7 +27,7 @@ class RenderClassTest extends HtmlhelperTestCase
      */
     public function testFailRenderHtmlClassWithObjectGiven()
     {
-        renderClass(new stdClass());
+        classTag(new stdClass());
     }
 
     /**
@@ -37,7 +37,7 @@ class RenderClassTest extends HtmlhelperTestCase
      */
     public function testFailRenderHtmlClassWithDoubleGiven()
     {
-        renderClass(12.7);
+        classTag(12.7);
     }
 
     /**
@@ -47,6 +47,13 @@ class RenderClassTest extends HtmlhelperTestCase
      */
     public function testFailRenderHtmlClassWithBooleanGiven()
     {
-        renderClass(true);
+        classTag(true);
+    }
+
+    public function testRenderedHtml()
+    {
+        \View::addNamespace('htmlHelper', 'tests/views');
+        $html = view('htmlHelper::classTag')->render();
+        $this->assertContains('<div class="class1 class2 class3 class4 class5 class6 7"></div>', $html);
     }
 }
