@@ -1,0 +1,46 @@
+{
+    "name": "okipa/laravel-html-helper",
+    "description": "Some Laravel methods to generate clean HTML.",
+    "type": "library",
+    "keywords": [
+        "okipa",
+        "package",
+        "laravel",
+        "php",
+        "html",
+        "helper",
+        "generate",
+        "generator",
+        "generation"
+    ],
+    "homepage": "https://github.com/Okipa/laravel-html-helper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arthur LORENT",
+            "email": "arthur.lorent@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "~5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Okipa\\LaravelHtmlHelper\\": "src/"
+        },
+        "files": [
+            "app/Helpers/HtmlHelper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Okipa\\LaravelHtmlHelper\\Test\\": "tests"
+        }
+    },
+    "minimum-stability": "stable"
+}
