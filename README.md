@@ -8,7 +8,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 
-Some Laravel methods to generate clean HTML.
+Some usefull methods to generate clean HTML in Laravel.
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -31,9 +31,10 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
 
 ## API
 
-- `public function renderClass(...$classList) : string`
-    > Render a html class tag filled with the given class list  
-    > Associated helper : `renderClass()`  
+### `public function renderClass(...$classList) : string`
+Render a html class tag filled with the given class list . 
+Associated helper : `renderClass()`.
+
 ```php
 // in your html
 <div renderClass([

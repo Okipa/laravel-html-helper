@@ -1,6 +1,6 @@
 {
     "name": "okipa/laravel-html-helper",
-    "description": "Some Laravel methods to generate clean HTML.",
+    "description": "Some usefull methods to generate clean HTML in Laravel.",
     "type": "library",
     "keywords": [
         "okipa",
