@@ -21,6 +21,18 @@ class ClassTagTest extends HtmlhelperTestCase
         $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
     }
 
+    public function testSuccessRenderHtmlClassFromClass()
+    {
+        $html = app(\Okipa\LaravelHtmlHelper\HtmlHelper::class)->generateClassHtmlTag(
+            'class1',
+            ['class2', 'class3', null],
+            null,
+            ['class4', ['class5', 'class6Key' => 'class6']],
+            7
+        )->render();
+        $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
+    }
+
     /**
      * @expectedException ErrorException
      * @expectedExceptionMessage Object of class stdClass could not be converted to string

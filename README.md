@@ -46,7 +46,7 @@ Associated helper : `classTag()`.
 // in your code
 public function someMethod()
 {
-    return (string) '<div' . app(\Okipa\LaravelHtmlHelper::class)->generateClassHtmlTag([
+    return (string) '<div' . app(\Okipa\LaravelHtmlHelper\HtmlHelper::class)->generateClassHtmlTag([
         'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
     ], 'another-class')->render() . '></div>'
 }
