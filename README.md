@@ -36,7 +36,9 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
     > Associated helper : `renderClass()`  
 ```php
 // in your html
-<div renderClass(['imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']], 'another-class')></div>
+<div renderClass([
+    'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
+], 'another-class')></div>
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>
 
