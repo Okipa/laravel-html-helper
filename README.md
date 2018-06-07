@@ -31,10 +31,9 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
 
 ## API
 
-Just use the available helpers in your blade templates or in your code to generate your HTML.
-
 - `public function renderClass(...$classList) : string`
-    > Render a html class tag filled with the given class list    
+    > Render a html class tag filled with the given class list  
+    > Associated helper : `renderClass()`  
 ```php
 // in your html
 <div renderClass(['imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']], 'another-class')></div>
@@ -44,7 +43,9 @@ Just use the available helpers in your blade templates or in your code to genera
 // in your code
 public function someMethod()
 {
-    return (string) '<div' . app(\Okipa\LaravelHtmlHelper::class)->renderClass(['imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']], 'another-class') . '></div>'
+    return (string) '<div' . app(\Okipa\LaravelHtmlHelper::class)->renderClass([
+        'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
+    ], 'another-class') . '></div>'
 }
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>
