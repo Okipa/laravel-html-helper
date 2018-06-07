@@ -8,7 +8,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 
-Some usefull methods to generate clean HTML in Laravel.
+Some usefull methods to generate clean HTML with Laravel.
 
 ------------------------------------------------------------------------------------------------------------------------
 
