@@ -31,7 +31,7 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
 
 ## API
 
-#### `public function renderClass(...$classList) : string`
+##### `public function renderClass(...$classList) : string`
 Render a html class tag filled with the given class list .  
 Associated helper : `renderClass()`.
 
