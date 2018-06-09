@@ -38,7 +38,7 @@ class ClassTagTest extends HtmlhelperTestCase
      * @expectedException ErrorException
      * @expectedExceptionMessage Object of class stdClass could not be converted to string
      */
-    public function testFailRenderHtmlClassWithObjectGiven()
+    public function testFailRenderClassTagHtmlWithObjectGiven()
     {
         classTag(new stdClass());
     }
@@ -48,7 +48,7 @@ class ClassTagTest extends HtmlhelperTestCase
      * @expectedExceptionMessage The given class arguments should be strings, integers or arrays : double type given
      *                           for « 12.7 » argument.
      */
-    public function testFailRenderHtmlClassWithDoubleGiven()
+    public function testFailRenderClassTagHtmlWithDoubleGiven()
     {
         classTag(12.7);
     }
@@ -58,7 +58,7 @@ class ClassTagTest extends HtmlhelperTestCase
      * @expectedExceptionMessage The given class arguments should be strings, integers or arrays : boolean type given
      *                           for « 1 » argument.
      */
-    public function testFailRenderHtmlClassWithBooleanGiven()
+    public function testFailRenderClassTagHtmlWithBooleanGiven()
     {
         classTag(true);
     }

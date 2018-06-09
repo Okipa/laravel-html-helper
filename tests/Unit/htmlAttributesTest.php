@@ -48,7 +48,7 @@ class htmlAttributesTest extends HtmlhelperTestCase
      * @expectedExceptionMessage The given attributes arguments should be strings or arrays : integer type given for «
      *                           10 » argument.
      */
-    public function testFailRenderHtmlClassWithIntGiven()
+    public function testFailRenderAttributesHtmlWithIntGiven()
     {
         classTag(htmlAttributes(10));
     }
@@ -57,7 +57,7 @@ class htmlAttributesTest extends HtmlhelperTestCase
      * @expectedException ErrorException
      * @expectedExceptionMessage Object of class stdClass could not be converted to string
      */
-    public function testFailRenderHtmlClassWithObjectGiven()
+    public function testFailRenderAttributesHtmlWithObjectGiven()
     {
         htmlAttributes(new stdClass());
     }
@@ -67,7 +67,7 @@ class htmlAttributesTest extends HtmlhelperTestCase
      * @expectedExceptionMessage The given attributes arguments should be strings or arrays : double type given
      *                           for « 12.7 » argument.
      */
-    public function testFailRenderHtmlClassWithDoubleGiven()
+    public function testFailRenderAttributesHtmlWithDoubleGiven()
     {
         htmlAttributes(12.7);
     }
@@ -77,7 +77,7 @@ class htmlAttributesTest extends HtmlhelperTestCase
      * @expectedExceptionMessage The given attributes arguments should be strings or arrays : boolean type given
      *                           for « 1 » argument.
      */
-    public function testFailRenderHtmlClassWithBooleanGiven()
+    public function testFailRenderAttributesHtmlWithBooleanGiven()
     {
         htmlAttributes(true);
     }
