@@ -53,7 +53,7 @@ public function someMethod()
         ['imported', 'class', 'array', 'from' 'config'],
         ['nested', ['class', 'arrays']],
         'another-class'
-    )->render() . '></div>'
+    ) . '></div>'
 }
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>
@@ -95,7 +95,7 @@ public function someMethod()
         ['attributes7Value', ['attribute8Value', 'attribute9Key' => 'attribute9Value']],
         ['attribute10Key' => ['attribute11Value']],
         ['attribute12Key' => '']
-    )->render() . '></div>'
+    ) . '></div>'
 }
 // gives
 <div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
