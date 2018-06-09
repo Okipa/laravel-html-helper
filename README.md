@@ -31,27 +31,70 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
 
 ## API
 
-##### `public function generateClassHtmlTag(...$classList) : \Okipa\LaravelHtmlHelper\HtmlHelper`
+##### `classTag(...$classList) : HtmlString`
 Render a html class tag filled with the given class list .  
-Associated helper : `classTag()`.
 
 ```php
 // in your html
-<div {{ classTag([
-    'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
-], 'another-class') }}></div>
+<div {{ classTag(
+    ['imported', 'class', 'array', 'from' 'config'],
+    ['nested', ['class', 'arrays']],
+    'another-class'
+) }}></div>
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>
 
 // in your code
 public function someMethod()
 {
-    return (string) '<div' . app(\Okipa\LaravelHtmlHelper\HtmlHelper::class)->generateClassHtmlTag([
-        'imported', 'class', 'array', 'from' 'config'], ['nested', ['class', 'arrays']
-    ], 'another-class')->render() . '></div>'
+    return (string) '<div' . app(\Okipa\LaravelHtmlHelper\HtmlClassTag::class)->render(
+        ['imported', 'class', 'array', 'from' 'config'],
+        ['nested', ['class', 'arrays']],
+        'another-class'
+    )->render() . '></div>'
 }
 // gives
 <div class="imported class array from config nested class arrays another-class"></div>
+```
+
+##### `htmlAttributes(...$attributesList) : HtmlString`
+
+
+```php
+// in your html
+<div {{ htmlAttributes(
+    'attribute1Value',
+    ['attribute2Key' => 'attribute2Value'],
+    ['attribute3Key' => null],
+    ['attribute4Value', 'attribute5Value'],
+    '',
+    null,
+    ['' => 'attribute6Value'],
+    ['attributes7Value', ['attribute8Value', 'attribute9Key' => 'attribute9Value']],
+    ['attribute10Key' => ['attribute11Value']],
+    ['attribute12Key' => '']
+) }}></div>
+// gives
+<div 'attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
+
+// in your code
+public function someMethod()
+{
+    return (string) '<div' . app(\Okipa\LaravelHtmlHelper\HtmlAttributes::class)->render(
+        'attribute1Value',
+        ['attribute2Key' => 'attribute2Value'],
+        ['attribute3Key' => null],
+        ['attribute4Value', 'attribute5Value'],
+        '',
+        null,
+        ['' => 'attribute6Value'],
+        ['attributes7Value', ['attribute8Value', 'attribute9Key' => 'attribute9Value']],
+        ['attribute10Key' => ['attribute11Value']],
+        ['attribute12Key' => '']
+    )->render() . '></div>'
+}
+// gives
+<div 'attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
 ```
 
 ------------------------------------------------------------------------------------------------------------------------

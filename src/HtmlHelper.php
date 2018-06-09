@@ -2,11 +2,9 @@
 
 namespace Okipa\LaravelHtmlHelper;
 
-use Exception;
 use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Support\HtmlString;
 
-class HtmlHelper implements Htmlable
+abstract class HtmlHelper implements Htmlable
 {
     /**
      * The generated html string.
@@ -16,37 +14,13 @@ class HtmlHelper implements Htmlable
     protected $htmlString;
 
     /**
-     * Render a html class tag filled with the given class list.
+     * Render the generated html.
      *
-     * @param mixed ...$classList
+     * @param mixed ...$args
      *
-     * @return \Okipa\LaravelHtmlHelper\HtmlHelper
-     * @throws \Exception
+     * @return mixed
      */
-    public function generateClassHtmlTag(...$classList): HtmlHelper
-    {
-        $classArray = [];
-        foreach (func_get_args() as $arg) {
-            switch (gettype($arg)) {
-                case 'string' :
-                case 'integer' :
-                    $classArray[] = $arg;
-                    break;
-                case 'array':
-                    $classArray = array_merge($classArray, $arg);
-                    break;
-                case 'NULL':
-                    break;
-                default:
-                    throw new Exception('The given class arguments should be strings, integers or arrays : '
-                                        . gettype($arg) . ' type given for « ' . $arg . ' » argument.');
-            }
-        }
-        $classArray = array_map('trim', array_filter(array_flatten($classArray)));
-        $this->htmlString = new HtmlString('class="' . implode(' ', $classArray) . '"');
-
-        return $this;
-    }
+    abstract public function render(...$args);
 
     /**
      * Get content as a string of HTML.
@@ -55,16 +29,6 @@ class HtmlHelper implements Htmlable
      */
     public function toHtml()
     {
-        return (string) $this->htmlString;
-    }
-
-    /**
-     * Render the html string.
-     *
-     * @return mixed
-     */
-    public function render()
-    {
-        return $this->htmlString;
+        return (string) $this->render();
     }
 }

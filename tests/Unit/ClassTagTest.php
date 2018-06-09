@@ -9,7 +9,7 @@ use stdClass;
 
 class ClassTagTest extends HtmlhelperTestCase
 {
-    public function testSuccessRenderHtmlClass()
+    public function testSuccessRenderClassTagHtmlFromHelper()
     {
         $html = classTag(
             'class1',
@@ -22,15 +22,15 @@ class ClassTagTest extends HtmlhelperTestCase
         $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
     }
 
-    public function testSuccessRenderHtmlClassFromClass()
+    public function testSuccessRenderClassTagHtmlFromClass()
     {
-        $html = app(\Okipa\LaravelHtmlHelper\HtmlHelper::class)->generateClassHtmlTag(
+        $html = app(\Okipa\LaravelHtmlHelper\HtmlClassTag::class)->render(
             'class1',
             ['class2', 'class3', null],
             null,
             ['class4', ['class5 ', 'class6Key' => 'class6']],
             7
-        )->render();
+        );
         $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
     }
 
@@ -65,7 +65,7 @@ class ClassTagTest extends HtmlhelperTestCase
 
     public function testRenderedHtml()
     {
-        \View::addNamespace('htmlHelper', 'tests/views');
+        view()->addNamespace('htmlHelper', 'tests/views');
         $html = view('htmlHelper::classTag')->render();
         $this->assertContains('<div class="class1 class2 class3 class4 class5 class6 7"></div>', $html);
     }
