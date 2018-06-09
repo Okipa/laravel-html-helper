@@ -60,7 +60,7 @@ public function someMethod()
 ```
 
 ##### `htmlAttributes(...$attributesList) : HtmlString`
-
+Render html attributes from the given attributes list.
 
 ```php
 // in your html
