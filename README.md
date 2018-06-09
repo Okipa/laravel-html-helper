@@ -75,7 +75,7 @@ public function someMethod()
     ['attribute12Key' => '']
 ) }}></div>
 // gives
-<div 'attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
+<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
 
 // in your code
 public function someMethod()
@@ -94,7 +94,7 @@ public function someMethod()
     )->render() . '></div>'
 }
 // gives
-<div 'attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
+<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
 ```
 
 ------------------------------------------------------------------------------------------------------------------------
