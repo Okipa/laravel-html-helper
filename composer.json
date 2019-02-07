@@ -27,7 +27,9 @@
         "illuminate/support": "~5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.6"
+        "orchestra/testbench": "^3.6",
+        "squizlabs/php_codesniffer": "^3.4",
+        "phpmd/phpmd": "^2.6"
     },
     "autoload": {
         "psr-4": {
@@ -41,6 +43,14 @@
         "psr-4": {
             "Okipa\\LaravelHtmlHelper\\Test\\": "tests"
         }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpcbf",
+            "vendor/bin/phpcs",
+            "vendor/bin/phpmd app,src text phpmd.xml",
+            "phpunit"
+        ]
     },
     "minimum-stability": "stable"
 }

@@ -8,7 +8,19 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 
-Some usefull methods to generate clean HTML with Laravel.
+Usefull helpers to generate clean HTML with Laravel.
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Table of Contents
+- [Installation](#installation)
+- [API](#api)
+  - [classTag](#classtag)
+  - [htmlAttributes](#htmlattributes)
+- [Changelog](#changelog)
+- [Testing](#testing)
+- [Credits](#credits)
+- [Licence](#license)
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -31,7 +43,7 @@ $this->app->register(Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider::class);
 
 ## API
 
-##### `classTag(...$classList) : HtmlString`
+### `classTag(...$classList) : HtmlString`
 Render a html class tag filled with the given class list .  
 
 ```php
@@ -59,7 +71,7 @@ public function someMethod()
 <div class="imported class array from config nested class arrays another-class"></div>
 ```
 
-##### `htmlAttributes(...$attributesList) : HtmlString`
+### `htmlAttributes(...$attributesList) : HtmlString`
 Render html attributes from the given attributes list.
 
 ```php
@@ -103,6 +115,26 @@ public function someMethod()
 
 ------------------------------------------------------------------------------------------------------------------------
 
-## Contributors
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Testing
+
+```bash
+composer test
+```
+
+------------------------------------------------------------------------------------------------------------------------
+
+## Credits
 
 - [ACID-Solutions](https://github.com/ACID-Solutions)
+
+------------------------------------------------------------------------------------------------------------------------
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

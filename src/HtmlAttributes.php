@@ -49,7 +49,7 @@ class HtmlAttributes extends HtmlHelper
         $attributesArray = [];
         foreach (func_get_args() as $arg) {
             switch (gettype($arg)) {
-                case 'string' :
+                case 'string':
                     $attributesArray[] = $arg;
                     break;
                 case 'array':

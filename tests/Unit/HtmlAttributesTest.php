@@ -7,7 +7,7 @@ use Okipa\LaravelHtmlHelper\HtmlAttributes;
 use Okipa\LaravelHtmlHelper\Test\HtmlhelperTestCase;
 use stdClass;
 
-class htmlAttributesTest extends HtmlhelperTestCase
+class HtmlAttributesTest extends HtmlhelperTestCase
 {
     public function testSuccessRenderAttributesHtmlFromHelper()
     {

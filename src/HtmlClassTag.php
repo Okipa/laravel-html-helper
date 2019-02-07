@@ -31,12 +31,12 @@ class HtmlClassTag extends HtmlHelper
         $classArray = [];
         foreach (func_get_args() as $arg) {
             switch (gettype($arg)) {
-                case 'string' :
-                case 'integer' :
+                case 'string':
+                case 'integer':
                     $classArray[] = $arg;
                     break;
                 case 'array':
-                    $classArray = array_merge($classArray, $arg);
+                    $classArray = !empty($arg) ? array_merge($classArray, $arg) : $classArray;
                     break;
                 case 'NULL':
                     break;
@@ -47,6 +47,6 @@ class HtmlClassTag extends HtmlHelper
         }
         $classArray = array_map('trim', array_filter(array_flatten($classArray)));
 
-        return new HtmlString('class="' . implode(' ', $classArray) . '"');
+        return new HtmlString(!empty($classArray) ? 'class="' . implode(' ', $classArray) . '"' : '');
     }
 }
