@@ -47,13 +47,16 @@ Render a html class tag filled with the given class list .
 
 ```php
 // in your html
-<div {{ classTag(
-    ['imported', 'class', 'array', 'from' 'config'],
-    ['nested', ['class', 'arrays']],
-    'another-class'
+<div{{ classTag(
+    'class1',
+    ['class2', 'class3', null],
+    null,
+    [],
+    ['class4', ['class5 ', 'class6Key' => 'class6']],
+    7
 ) }}></div>
 // gives
-<div class="imported class array from config nested class arrays another-class"></div>
+<div class="class="class1 class2 class3 class4 class5 class6 7"></div>
 ```
 
 ```
@@ -71,11 +74,12 @@ public function someMethod()
 ```
 
 ### `htmlAttributes(...$attributesList) : HtmlString`
-Render html attributes from the given attributes list.
+Render html attributes from the given attributes list.  
+Note : 
 
 ```php
 // in your html
-<div {{ htmlAttributes(
+<div{{ htmlAttributes(
     'attribute1Value',
     ['attribute2Key' => 'attribute2Value'],
     ['attribute3Key' => null],

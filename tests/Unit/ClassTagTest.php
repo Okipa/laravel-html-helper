@@ -20,7 +20,7 @@ class ClassTagTest extends HtmlhelperTestCase
             [],
             7
         );
-        $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
+        $this->assertEquals(' class="class1 class2 class3 class4 class5 class6 7"', $html);
     }
 
     public function testEmptyClassTagHtml()
@@ -38,7 +38,7 @@ class ClassTagTest extends HtmlhelperTestCase
             ['class4', ['class5 ', 'class6Key' => 'class6']],
             7
         );
-        $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
+        $this->assertEquals(' class="class1 class2 class3 class4 class5 class6 7"', $html);
     }
 
     public function testFailRenderClassTagHtmlWithObjectGiven()

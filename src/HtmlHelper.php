@@ -3,31 +3,32 @@
 namespace Okipa\LaravelHtmlHelper;
 
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\HtmlString;
 
 abstract class HtmlHelper implements Htmlable
 {
-    /**
-     * The generated html string.
-     *
-     * @property string $htmlString
-     */
-    protected $htmlString;
+//    /**
+//     * The generated html string.
+//     *
+//     * @property string $htmlString
+//     */
+//    protected $htmlString;
 
     /**
      * Render the generated html.
      *
      * @param mixed ...$args
      *
-     * @return mixed
+     * @return \Illuminate\Support\HtmlString
      */
-    abstract public function render(...$args);
+    abstract public function render(...$args): HtmlString;
 
     /**
      * Get content as a string of HTML.
      *
      * @return string
      */
-    public function toHtml()
+    public function toHtml(): string
     {
         return (string) $this->render();
     }

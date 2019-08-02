@@ -25,7 +25,7 @@ class HtmlAttributesTest extends HtmlhelperTestCase
             ['attribute12Key' => '']
         );
         $this->assertEquals(
-            'attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key',
+            ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key',
             $html
         );
     }
@@ -45,7 +45,7 @@ class HtmlAttributesTest extends HtmlhelperTestCase
             ['attribute12Key' => '']
         );
         $this->assertEquals(
-            'attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key',
+            ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key',
             $html
         );
     }

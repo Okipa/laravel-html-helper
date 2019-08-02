@@ -113,6 +113,6 @@ class HtmlAttributes extends HtmlHelper
             }
         }
 
-        return $html;
+        return ' ' . $html;
     }
 }

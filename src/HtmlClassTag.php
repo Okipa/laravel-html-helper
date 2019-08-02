@@ -3,6 +3,7 @@
 namespace Okipa\LaravelHtmlHelper;
 
 use Exception;
+use Illuminate\Support\Arr;
 use Illuminate\Support\HtmlString;
 
 class HtmlClassTag extends HtmlHelper
@@ -26,7 +27,7 @@ class HtmlClassTag extends HtmlHelper
      * @return \Illuminate\Support\HtmlString
      * @throws \Exception
      */
-    protected function generateHtmlClassTag()
+    protected function generateHtmlClassTag(): HtmlString
     {
         $classArray = [];
         foreach (func_get_args() as $arg) {
@@ -45,8 +46,8 @@ class HtmlClassTag extends HtmlHelper
                                         . gettype($arg) . ' type given for « ' . $arg . ' » argument.');
             }
         }
-        $classArray = array_map('trim', array_filter(array_flatten($classArray)));
+        $classArray = array_map('trim', array_filter(Arr::flatten($classArray)));
 
-        return new HtmlString(!empty($classArray) ? 'class="' . implode(' ', $classArray) . '"' : '');
+        return new HtmlString(!empty($classArray) ? ' class="' . implode(' ', $classArray) . '"' : '');
     }
 }
