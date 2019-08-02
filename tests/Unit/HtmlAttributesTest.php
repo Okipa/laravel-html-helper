@@ -83,4 +83,11 @@ class HtmlAttributesTest extends HtmlhelperTestCase
             $html
         );
     }
+
+    public function testHtmlNoAttributesRenderedHtml()
+    {
+        view()->addNamespace('htmlHelper', 'tests/views');
+        $html = view('htmlHelper::noHtmlAttributes')->render();
+        $this->assertStringContainsString('<div></div>', $html);
+    }
 }
