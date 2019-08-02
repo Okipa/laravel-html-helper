@@ -41,32 +41,21 @@ class ClassTagTest extends HtmlhelperTestCase
         $this->assertEquals('class="class1 class2 class3 class4 class5 class6 7"', $html);
     }
 
-    /**
-     * @expectedException ErrorException
-     * @expectedExceptionMessage Object of class stdClass could not be converted to string
-     */
     public function testFailRenderClassTagHtmlWithObjectGiven()
     {
+        $this->expectException(ErrorException::class);
         classTag(new stdClass());
     }
 
-    /**
-     * @expectedException Exception
-     * @expectedExceptionMessage The given class arguments should be strings, integers or arrays : double type given
-     *                           for « 12.7 » argument.
-     */
     public function testFailRenderClassTagHtmlWithDoubleGiven()
     {
+        $this->expectException(Exception::class);
         classTag(12.7);
     }
 
-    /**
-     * @expectedException Exception
-     * @expectedExceptionMessage The given class arguments should be strings, integers or arrays : boolean type given
-     *                           for « 1 » argument.
-     */
     public function testFailRenderClassTagHtmlWithBooleanGiven()
     {
+        $this->expectException(Exception::class);
         classTag(true);
     }
 
@@ -74,6 +63,6 @@ class ClassTagTest extends HtmlhelperTestCase
     {
         view()->addNamespace('htmlHelper', 'tests/views');
         $html = view('htmlHelper::classTag')->render();
-        $this->assertContains('<div class="class1 class2 class3 class4 class5 class6 7"></div>', $html);
+        $this->assertStringContainsString('<div class="class1 class2 class3 class4 class5 class6 7"></div>', $html);
     }
 }

@@ -17,12 +17,11 @@ Usefull helpers to generate clean HTML with Laravel.
 - [API](#api)
   - [classTag](#classtag)
   - [htmlAttributes](#htmlattributes)
-- [Changelog](#changelog)
 - [Testing](#testing)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
 - [Credits](#credits)
 - [Licence](#license)
-
-------------------------------------------------------------------------------------------------------------------------
 
 ## Installation
 
@@ -113,27 +112,24 @@ public function someMethod()
 <div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
 ```
 
-------------------------------------------------------------------------------------------------------------------------
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-------------------------------------------------------------------------------------------------------------------------
-
 ## Testing
 
 ```bash
 composer test
 ```
 
-------------------------------------------------------------------------------------------------------------------------
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [ACID-Solutions](https://github.com/ACID-Solutions)
-
-------------------------------------------------------------------------------------------------------------------------
+- [Arthur LORENT](https://github.com/okipa)
+- [All Contributors](../../contributors)
 
 ## License
 
