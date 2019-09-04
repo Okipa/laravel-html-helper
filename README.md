@@ -14,7 +14,7 @@ Usefull helpers to dynamically generate clean HTML with Laravel.
 
 | Laravel version | PHP version | Package version |
 |---|---|---|
-| ^6.0 | ^7.2 | ^2.0 |
+| ^6.0 | ^7.2 | ^1.2 |
 | ^5.5 | ^7.1 | ^1.0 |
 
 ## Table of Contents
