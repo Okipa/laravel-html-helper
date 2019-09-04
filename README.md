@@ -12,7 +12,10 @@ Usefull helpers to dynamically generate clean HTML with Laravel.
 
 ## Compatibility
 
-This version is compatible with Laravel 6.0+ and PHP7.2+.
+| Laravel version | PHP version | Package version |
+|---|---|---|
+| ^6.0 | ^7.2 | ^2.0 |
+| ^5.5 | ^7.1 | ^1.0 |
 
 ## Table of Contents
 - [Installation](#installation)
@@ -29,7 +32,7 @@ This version is compatible with Laravel 6.0+ and PHP7.2+.
 
 - Install the package with composer :
 ```bash
-composer require okipa/laravel-html-helper
+composer require "okipa/laravel-html-helper :^2.0"
 ```
 
 ## API
