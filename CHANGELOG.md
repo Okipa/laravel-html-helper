@@ -5,7 +5,6 @@
 - Added compatibility for Laravel 6.
 - Dropped support for php 7.1.
 
-
 ## [1.1.1](https://github.com/Okipa/laravel-html-helper/releases/tag/1.1.1)
 2019-08-02
 - Fixed `htmlAttributes()` feature which was adding a space before the returned value, even if it was supposed to be an empty space.
