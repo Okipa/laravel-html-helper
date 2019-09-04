@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.1](https://github.com/Okipa/laravel-html-helper/releases/tag/2.0.1)
+2019-09-04
+- Passed `nunomaduro/larastan` dependency in dev-dependencies.
+
 ## [2.0.0](https://github.com/Okipa/laravel-html-helper/releases/tag/2.0.0)
 2019-09-04
 - Added compatibility for Laravel 6.
