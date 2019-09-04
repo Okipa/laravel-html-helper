@@ -4,10 +4,10 @@ namespace Okipa\LaravelHtmlHelper\Test\Unit;
 
 use ErrorException;
 use Exception;
-use Okipa\LaravelHtmlHelper\Test\HtmlhelperTestCase;
+use Okipa\LaravelHtmlHelper\Test\HtmlHelperTestCase;
 use stdClass;
 
-class ClassTagTest extends HtmlhelperTestCase
+class ClassTagTest extends HtmlHelperTestCase
 {
     public function testSuccessRenderClassTagHtmlFromHelper()
     {

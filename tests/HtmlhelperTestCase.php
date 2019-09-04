@@ -2,9 +2,10 @@
 
 namespace Okipa\LaravelHtmlHelper\Test;
 
+use Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider;
 use Orchestra\Testbench\TestCase;
 
-abstract class HtmlhelperTestCase extends TestCase
+abstract class HtmlHelperTestCase extends TestCase
 {
 
     /**
@@ -17,7 +18,7 @@ abstract class HtmlhelperTestCase extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            'Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider',
+            HtmlHelperServiceProvider::class,
         ];
     }
 }
