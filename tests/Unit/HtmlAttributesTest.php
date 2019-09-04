@@ -5,10 +5,10 @@ namespace Okipa\LaravelHtmlHelper\Test\Unit;
 use ErrorException;
 use Exception;
 use Okipa\LaravelHtmlHelper\HtmlAttributes;
-use Okipa\LaravelHtmlHelper\Test\HtmlhelperTestCase;
+use Okipa\LaravelHtmlHelper\Test\HtmlHelperTestCase;
 use stdClass;
 
-class HtmlAttributesTest extends HtmlhelperTestCase
+class HtmlAttributesTest extends HtmlHelperTestCase
 {
     public function testSuccessRenderAttributesHtmlFromHelper()
     {

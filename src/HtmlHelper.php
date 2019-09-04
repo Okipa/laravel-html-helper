@@ -7,13 +7,6 @@ use Illuminate\Support\HtmlString;
 
 abstract class HtmlHelper implements Htmlable
 {
-//    /**
-//     * The generated html string.
-//     *
-//     * @property string $htmlString
-//     */
-//    protected $htmlString;
-
     /**
      * Render the generated html.
      *
