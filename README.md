@@ -32,7 +32,7 @@ Usefull helpers to dynamically generate clean HTML with Laravel.
 
 - Install the package with composer :
 ```bash
-composer require "okipa/laravel-html-helper:^2.0"
+composer require "okipa/laravel-html-helper:^1.2"
 ```
 
 ## API
