@@ -2,7 +2,6 @@
 
 namespace Okipa\LaravelHtmlHelper\Test\Unit;
 
-use ErrorException;
 use Exception;
 use Okipa\LaravelHtmlHelper\HtmlAttributes;
 use Okipa\LaravelHtmlHelper\Test\HtmlHelperTestCase;
@@ -25,7 +24,9 @@ class HtmlAttributesTest extends HtmlHelperTestCase
             ['attribute12Key' => '']
         );
         $this->assertEquals(
-            ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key',
+            ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value '
+            . 'attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" '
+            . 'attribute10Key attribute11Value attribute12Key',
             $html
         );
     }
@@ -45,7 +46,9 @@ class HtmlAttributesTest extends HtmlHelperTestCase
             ['attribute12Key' => '']
         );
         $this->assertEquals(
-            ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key',
+            ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value '
+            . 'attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key '
+            . 'attribute11Value attribute12Key',
             $html
         );
     }
@@ -58,7 +61,7 @@ class HtmlAttributesTest extends HtmlHelperTestCase
 
     public function testFailRenderAttributesHtmlWithObjectGiven()
     {
-        $this->expectException(ErrorException::class);
+        $this->expectException(Exception::class);
         htmlAttributes(new stdClass());
     }
 
@@ -79,7 +82,9 @@ class HtmlAttributesTest extends HtmlHelperTestCase
         view()->addNamespace('htmlHelper', 'tests/views');
         $html = view('htmlHelper::htmlAttributes')->render();
         $this->assertStringContainsString(
-            '<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>',
+            '<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value ' .
+            'attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key '
+            . 'attribute11Value attribute12Key></div>',
             $html
         );
     }

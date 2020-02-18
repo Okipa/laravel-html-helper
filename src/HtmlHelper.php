@@ -8,15 +8,6 @@ use Illuminate\Support\HtmlString;
 abstract class HtmlHelper implements Htmlable
 {
     /**
-     * Render the generated html.
-     *
-     * @param mixed ...$args
-     *
-     * @return \Illuminate\Support\HtmlString
-     */
-    abstract public function render(...$args): HtmlString;
-
-    /**
      * Get content as a string of HTML.
      *
      * @return string
@@ -25,4 +16,13 @@ abstract class HtmlHelper implements Htmlable
     {
         return (string) $this->render();
     }
+
+    /**
+     * Render the generated html.
+     *
+     * @param mixed ...$args
+     *
+     * @return \Illuminate\Support\HtmlString
+     */
+    abstract public function render(...$args): HtmlString;
 }

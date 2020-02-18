@@ -37,17 +37,17 @@ class HtmlClassTag extends HtmlHelper
                     $classArray[] = $arg;
                     break;
                 case 'array':
-                    $classArray = !empty($arg) ? array_merge($classArray, $arg) : $classArray;
+                    $classArray = ! empty($arg) ? array_merge($classArray, $arg) : $classArray;
                     break;
                 case 'NULL':
                     break;
                 default:
                     throw new Exception('The given class arguments should be strings, integers or arrays : '
-                                        . gettype($arg) . ' type given for « ' . $arg . ' » argument.');
+                        . gettype($arg) . ' type given.');
             }
         }
         $classArray = array_map('trim', array_filter(Arr::flatten($classArray)));
 
-        return new HtmlString(!empty($classArray) ? ' class="' . implode(' ', $classArray) . '"' : '');
+        return new HtmlString(! empty($classArray) ? ' class="' . implode(' ', $classArray) . '"' : '');
     }
 }
