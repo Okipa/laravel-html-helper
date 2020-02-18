@@ -19,6 +19,7 @@ Usefull helpers to dynamically generate clean HTML with Laravel.
 | ^5.5 | ^7.1 | ^1.0 |
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [API](#api)
   - [classTag](#classtag)
@@ -32,17 +33,18 @@ Usefull helpers to dynamically generate clean HTML with Laravel.
 ## Installation
 
 - Install the package with composer :
+
 ```bash
-composer require "okipa/laravel-html-helper:^1.2"
+composer require "okipa/laravel-html-helper:^1.3"
 ```
 
 ## API
 
 ### `classTag(...$classList) : HtmlString`
-Render a html class tag filled with the given class list .  
 
-```php
-// in your html
+In you view :
+
+```blade
 <div{{ classTag(
     'class1',
     ['class2', 'class3', null],
@@ -51,30 +53,21 @@ Render a html class tag filled with the given class list .
     ['class4', ['class5 ', 'class6Key' => 'class6']],
     7
 ) }}></div>
-// gives
-<div class="class="class1 class2 class3 class4 class5 class6 7"></div>
 ```
 
+Will produce :
+
+```html
+<div class="class1 class2 class3 class4 class5 class6 7"></div>
 ```
-// in your code
-public function someMethod()
-{
-    return (string) '<div' . app(\Okipa\LaravelHtmlHelper\HtmlClassTag::class)->render(
-        ['imported', 'class', 'array', 'from' 'config'],
-        ['nested', ['class', 'arrays']],
-        'another-class'
-    ) . '></div>'
-}
-// gives
-<div class="imported class array from config nested class arrays another-class"></div>
-```
+
+In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlClassTag)->render()` method.
 
 ### `htmlAttributes(...$attributesList) : HtmlString`
-Render html attributes from the given attributes list.  
-Note : 
 
-```php
-// in your html
+In you view : 
+
+```blade
 <div{{ htmlAttributes(
     'attribute1Value',
     ['attribute2Key' => 'attribute2Value'],
@@ -87,30 +80,15 @@ Note :
     ['attribute10Key' => ['attribute11Value']],
     ['attribute12Key' => '']
 ) }}></div>
-// gives
+```
+
+Will produce :
+
+```html
 <div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
 ```
 
-```
-// in your code
-public function someMethod()
-{
-    return (string) '<div' . app(\Okipa\LaravelHtmlHelper\HtmlAttributes::class)->render(
-        'attribute1Value',
-        ['attribute2Key' => 'attribute2Value'],
-        ['attribute3Key' => null],
-        ['attribute4Value', 'attribute5Value'],
-        '',
-        null,
-        ['' => 'attribute6Value'],
-        ['attributes7Value', ['attribute8Value', 'attribute9Key' => 'attribute9Value']],
-        ['attribute10Key' => ['attribute11Value']],
-        ['attribute12Key' => '']
-    ) . '></div>'
-}
-// gives
-<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
-```
+In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlAttributes)->render()` method.
 
 ## Testing
 
