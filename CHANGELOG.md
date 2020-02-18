@@ -1,15 +1,6 @@
 # Changelog
 
 ## [1.3.0](https://github.com/Okipa/laravel-html-helper/compare/1.2.0...1.3.0)
-<<<<<<< HEAD
-2020-02-18
-- Added support for Laravel 7.
-
-## [1.2.0](https://github.com/Okipa/laravel-html-helper/compare/1.1.1...1.2.0)
-2019-09-04
-- Added support for Laravel 6.
-- Dropped support for php 7.1.
-=======
 
 2020-02-18
 
@@ -19,7 +10,6 @@
 ## [1.2.0](https://github.com/Okipa/laravel-html-helper/compare/1.1.1...1.2.0)
 
 2019-09-04
->>>>>>> 6fa224362491a1bbb354d5e8125ca5c23ddbb5b5
 
 * Added support for Laravel 6.
 * Dropped support for php 7.1.
@@ -37,7 +27,6 @@
 * `classTag()` and `htmlAttributes()` helpers are now callable directly after a html tag : they do add a space if the helper returns something and no space if nothing is returned.
 
 ```html
-<!-- Example -->
 <div{{ classTag(<your dynamic classes>) }}></div>
 ```
 
