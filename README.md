@@ -12,8 +12,9 @@ Usefull helpers to dynamically generate clean HTML with Laravel.
 
 ## Compatibility
 
-| Laravel version | PHP version | Package version |
+| Laravel | PHP | Package |
 |---|---|---|
+| ^5.8 | ^7.2 | ^1.3 |
 | ^5.5 | ^7.2 | ^1.2 |
 | ^5.5 | ^7.1 | ^1.0 |
 

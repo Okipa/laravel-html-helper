@@ -4,6 +4,7 @@
 
 2020-02-18
 
+* Dropped support for Laravel 5.5, 5.6 and 5.7.
 * Added support for Laravel 7.
 
 ## [1.2.0](https://github.com/Okipa/laravel-html-helper/compare/1.1.1...1.2.0)
