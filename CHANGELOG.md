@@ -1,8 +1,12 @@
 # Changelog
 
-## [1.2.0](https://github.com/Okipa/laravel-html-helper/releases/tag/1.2.0)
+## [1.3.0](https://github.com/Okipa/laravel-html-helper/compare/1.2.0...1.3.0)
+2020-02-18
+- Added support for Laravel 7.
+
+## [1.2.0](https://github.com/Okipa/laravel-html-helper/compare/1.1.1...1.2.0)
 2019-09-04
-- Added compatibility for Laravel 6.
+- Added support for Laravel 6.
 - Dropped support for php 7.1.
 
 ## [1.1.1](https://github.com/Okipa/laravel-html-helper/releases/tag/1.1.1)

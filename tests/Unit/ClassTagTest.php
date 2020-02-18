@@ -43,7 +43,7 @@ class ClassTagTest extends HtmlHelperTestCase
 
     public function testFailRenderClassTagHtmlWithObjectGiven()
     {
-        $this->expectException(ErrorException::class);
+        $this->expectException(Exception::class);
         classTag(new stdClass());
     }
 
