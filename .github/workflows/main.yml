@@ -68,9 +68,10 @@ jobs:
       - name: Code coverage upload to Coveralls
         if: matrix.php == '7.4' && matrix.laravel == '7.*'
         env:
-#          COVERALLS_GIT_BRANCH: ${GITHUB_REF##*/}
-#          COVERALLS_RUN_LOCALLY: 1
+          COVERALLS_GIT_BRANCH: ${GITHUB_REF##*/}
+          COVERALLS_RUN_LOCALLY: 1
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
+          echo ${GITHUB_REF##*/}
           composer require php-coveralls/php-coveralls
           vendor/bin/php-coveralls -v --coverage_clover=build/logs/clover.xml
