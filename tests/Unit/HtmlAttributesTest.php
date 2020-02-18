@@ -2,7 +2,6 @@
 
 namespace Okipa\LaravelHtmlHelper\Test\Unit;
 
-use ErrorException;
 use Exception;
 use Okipa\LaravelHtmlHelper\HtmlAttributes;
 use Okipa\LaravelHtmlHelper\Test\HtmlHelperTestCase;
