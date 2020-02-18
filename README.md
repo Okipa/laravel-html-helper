@@ -8,7 +8,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master)](https://coveralls.io/github/Okipa/laravel-html-helper?branch=master)
 [![Quality Score](https://img.shields.io/scrutinizer/g/Okipa/laravel-html-helper.svg?style=flat-square)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 
-Usefull helpers to dynamically generate clean HTML with Laravel.
+Useful helpers to dynamically generate clean HTML with Laravel.
 
 ## Compatibility
 
