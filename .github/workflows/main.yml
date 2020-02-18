@@ -56,7 +56,7 @@ jobs:
         if: matrix.php == '7.4' && matrix.laravel == '7.*'
         run: |
           vendor/bin/phpcs
-          vendor/bin/phpmd config,src text phpmd.xml
+          vendor/bin/phpmd src text phpmd.xml
           vendor/bin/phpstan analyse
 
       - name: PHPUnit + Code coverage
