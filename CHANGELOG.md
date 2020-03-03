@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1](https://github.com/Okipa/laravel-html-helper/compare/1.3.0...1.3.1)
+
+2020-03-03
+
+* Added testing files to .gitattributes export-ignore.
+
 ## [1.3.0](https://github.com/Okipa/laravel-html-helper/compare/1.2.0...1.3.0)
 
 2020-02-18
