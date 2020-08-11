@@ -10,7 +10,7 @@ parameters:
     level: 5
 
     ignoreErrors:
-        - '#Access to an undefined property#'
+        #- '#Access to an undefined property#'
 
     excludes_analyse:
         - ./*/*/FileToBeExcluded.php
