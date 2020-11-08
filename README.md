@@ -8,6 +8,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master)](https://coveralls.io/github/Okipa/laravel-html-helper?branch=master)
 [![Quality Score](https://img.shields.io/scrutinizer/g/Okipa/laravel-html-helper.svg?style=flat-square)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 
+
 Useful helpers to dynamically generate clean HTML with Laravel.
 
 ## Compatibility
@@ -46,55 +47,57 @@ composer require okipa/laravel-html-helper
 
 ## API
 
+Easily handle conditional HTML generation with the following helpers.
+
 ### html_classes
 
-In you view:
+Calling this helper generates an HTML `class` tag encapsulating the given dynamic classes.
+
+It accepts combination of strings, integers, arrays or null arguments.
 
 ```blade
+@php
+    $id = 17;
+    $fullScreen = false;
+    $darkMode = true;
+@endphp
 <div{{ html_classes(
-    'class1',
-    ['class2', 'class3', null],
-    null,
-    [],
-    ['class4', ['class5 ', 'class6Key' => 'class6']],
-    7
+    ['card', $id, 'text-left'],
+    $fullScreen ? 'full-screen' : null,
+    $darkMode ? ['bg-dark', 'text-white'] : null
 ) }}></div>
 ```
 
-Will produce:
-
 ```html
-<div class="class1 class2 class3 class4 class5 class6 7"></div>
+<div class="card 17 text-left bg-dark text-white"></div>
 ```
 
-In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlClasses)->render()` method.
+You can call `app(Okipa\LaravelHtmlHelper\HtmlClasses)->render($classes)` if you want to avoid helper use.
 
 ### html_attributes
 
-In you view: 
+Calling this helper generates dynamic HTML attributes, taking care about the given key-only, value-only or key-value combinations.
+
+It accepts combination of strings, arrays or null arguments.
 
 ```blade
+@php
+    $dragAndDrop = true;
+    $disabled = false;
+@endphp
 <div{{ html_attributes(
-    'attribute1Value',
-    ['attribute2Key' => 'attribute2Value'],
-    ['attribute3Key' => null],
-    ['attribute4Value', 'attribute5Value'],
-    '',
-    null,
-    ['' => 'attribute6Value'],
-    ['attributes7Value', ['attribute8Value', 'attribute9Key' => 'attribute9Value']],
-    ['attribute10Key' => ['attribute11Value']],
-    ['attribute12Key' => '']
+    ['data-confirm' => __('Are you sure you want to delete this line?')],
+    $dragAndDrop ? 'data-drag-drop' : null,
+    $disabled ? ['disabled', 'data-forbid-click'] : null,
+    'required'
 ) }}></div>
 ```
 
-Will produce:
-
 ```html
-<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
+<div data-confirm="Are you sure you want to delete this line?" data-drag-drop required></div>
 ```
 
-In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlAttributes)->render()` method.
+You can call `app(Okipa\LaravelHtmlHelper\HtmlAttributes)->render($attributes)` if you want to avoid helper use.
 
 ## Testing
 

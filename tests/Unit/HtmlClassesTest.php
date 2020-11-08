@@ -70,8 +70,8 @@ class HtmlClassesTest extends HtmlHelperTestCase
     /** @test */
     public function it_renders_html_classes_in_view(): void
     {
-        view()->addNamespace('html_helpers', 'tests/views');
-        $html = view('html_helpers::html-classes')->render();
+        view()->addNamespace('html_helper', 'tests/views');
+        $html = view('html_helper::html-classes')->render();
         self::assertStringContainsString('<div class="class1 class2 class3 class4 class5 class6 7"></div>', $html);
     }
 }

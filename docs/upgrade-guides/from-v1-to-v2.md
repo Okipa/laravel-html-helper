@@ -4,9 +4,10 @@ Follow the steps below to upgrade the package.
 
 ## Naming changes
 
-Helpers have been renamed to respect laravel helper-naming good practices. Make sure you replaced all following occurrences when upgrading:
+Helpers have been renamed. Make sure you replaced all following occurrences when upgrading:
 * Search and replace all occurrences of `classTag(` by `html_classes(`
 * Search and replace all occurrences of `htmlAttributes(` by `html_attributes(`
+* Search and replace all occurrences of `HtmlClasses(` by `html_attributes(`
 
 ## See all changes
 
