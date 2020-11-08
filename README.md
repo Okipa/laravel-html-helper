@@ -6,7 +6,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Build status](https://github.com/Okipa/laravel-html-helper/workflows/CI/badge.svg)](https://github.com/Okipa/laravel-html-helper/actions)
 [![Coverage Status](https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master)](https://coveralls.io/github/Okipa/laravel-html-helper?branch=master)
-[![Quality Score](https://img.shields.io/scrutinizer/g/Okipa/laravel-html-helper.svg?style=flat-square)](https://scrutinizer-ci.com/g/Okipa/laravel-html-helper/?branch=master)
 
 
 Useful helpers to dynamically generate clean HTML with Laravel.

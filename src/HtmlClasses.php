@@ -9,13 +9,13 @@ use RuntimeException;
 class HtmlClasses extends HtmlHelper
 {
     /**
-     * @param string|int|array|null ...$classList
+     * @param string|int|array|null ...$classes
      *
      * @return \Illuminate\Support\HtmlString
      */
-    public function render(...$classList): HtmlString
+    public function render(...$classes): HtmlString
     {
-        return $this->generateHtmlClasses(...$classList);
+        return $this->generateHtmlClasses(...$classes);
     }
 
     protected function generateHtmlClasses(): HtmlString
