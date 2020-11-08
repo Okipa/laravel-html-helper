@@ -1,1 +1,0 @@
-<div{{ htmlAttributes('attribute1Value', ['attribute2Key' => 'attribute2Value'], ['attribute3Key' => null], ['attribute4Value', 'attribute5Value'], '', null, ['' => 'attribute6Value'], ['attributes7Value', ['attribute8Value', 'attribute9Key' => 'attribute9Value']], ['attribute10Key' => ['attribute11Value']], ['attribute12Key' => '']) }}></div>

@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class HtmlHelperServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('Okipa\LaravelHtmlHelper', function (Application $app) {
             return $app->make(HtmlHelper::class);

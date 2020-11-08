@@ -32,16 +32,16 @@
 
 2019-08-02
 
-* Fixed `htmlAttributes()` feature which was adding a space before the returned value, even if it was supposed to be an empty space.
+* Fixed `html_attributes()` feature which was adding a space before the returned value, even if it was supposed to be an empty space.
 
 ## [1.1.0](https://github.com/Okipa/laravel-html-helper/compare/1.0.5...1.1.0)
 
 2019-08-02
 
-* `classTag()` and `htmlAttributes()` helpers are now callable directly after a html tag : they do add a space if the helper returns something and no space if nothing is returned.
+* `html_classes()` and `html_attributes()` helpers are now callable directly after a html tag : they do add a space if the helper returns something and no space if nothing is returned.
 
 ```html
-<div{{ classTag(<your dynamic classes>) }}></div>
+<div{{ html_classes(<your dynamic classes>) }}></div>
 ```
 
 ## [1.0.5](https://github.com/Okipa/laravel-html-helper/compare/1.1.4...1.0.5)

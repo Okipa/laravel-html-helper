@@ -2,110 +2,83 @@
 
 namespace Okipa\LaravelHtmlHelper;
 
-use Exception;
 use Illuminate\Support\HtmlString;
+use RuntimeException;
 
 class HtmlAttributes extends HtmlHelper
 {
     /**
-     * Render the generated html.
-     *
-     * @param mixed ...$attributesList
+     * @param string|array|null ...$attributes
      *
      * @return \Illuminate\Support\HtmlString
-     * @throws \Exception
      */
-    public function render(...$attributesList): HtmlString
+    public function render(...$attributes): HtmlString
     {
-        return $this->generateHtmlString(...$attributesList);
+        return $this->generateHtmlString(...$attributes);
     }
 
     /**
-     * Render html attributes from the given attributes list.
-     *
-     * @param mixed ...$attributesList
+     * @param string|array|null ...$attributes
      *
      * @return \Illuminate\Support\HtmlString
-     * @throws \Exception
      */
-    protected function generateHtmlString(...$attributesList): HtmlString
+    protected function generateHtmlString(...$attributes): HtmlString
     {
-        $attributesArray = $this->buildAttributesArray(...$attributesList);
-        $html = $this->buildHtmlString($attributesArray);
+        $builtAttributes = $this->buildAttributes(...$attributes);
+        $html = $this->buildHtmlString($builtAttributes);
 
         return new HtmlString($html);
     }
 
-    /**
-     * Build the attributes array
-     *
-     * @return array
-     * @throws \Exception
-     */
-    protected function buildAttributesArray(): array
+    protected function buildAttributes(): array
     {
-        $attributesArray = [];
+        $attributes = [];
         foreach (func_get_args() as $arg) {
             switch (gettype($arg)) {
                 case 'string':
-                    $attributesArray[] = $arg;
+                    $attributes[] = $arg;
                     break;
                 case 'array':
-                    $this->analyseArrayAttributes($arg, $attributesArray);
+                    $this->buildAttributeFromArray($arg, $attributes);
                     break;
                 case 'NULL':
                     break;
                 default:
-                    throw new Exception('The given attributes arguments should be strings or arrays : '
+                    throw new RuntimeException('The given attributes arguments should be strings or arrays: '
                         . gettype($arg) . ' type given.');
             }
         }
 
-        return array_map('trim', array_filter($attributesArray));
+        return array_map('trim', array_filter($attributes));
     }
 
-    /**
-     * @param array $array
-     * @param array $attributes
-     */
-    private function analyseArrayAttributes(array $array, array &$attributes): void
+    protected function buildAttributeFromArray(array $attribute, array &$attributes): void
     {
-        foreach ($array as $key => $value) {
+        foreach ($attribute as $key => $value) {
             if (is_array($value)) {
-                if (! empty($key) && is_string($key)) {
+                if (is_string($key)) {
                     $attributes[] = $key;
                 }
-                $this->analyseArrayAttributes($value, $attributes);
-            } else {
-                if (! empty($key) && is_string($key)) {
-                    if ($value) {
-                        $attributes[$key] = $value;
-                    } else {
-                        $attributes[] = $key;
-                    }
-                } else {
-                    if ($value) {
-                        $attributes[] = $value;
-                    } else {
-                        $attributes[] = $key;
-                    }
-                }
+                $this->buildAttributeFromArray($value, $attributes);
+                continue;
             }
+            if (is_string($key) && $value) {
+                $attributes[$key] = $value;
+                continue;
+            }
+            if ($value) {
+                $attributes[] = $value;
+                continue;
+            }
+            $attributes[] = $key;
         }
     }
 
-    /**
-     * Build the html string from the attributes array.
-     *
-     * @param array $attributesArray
-     *
-     * @return string
-     */
-    protected function buildHtmlString(array $attributesArray): string
+    protected function buildHtmlString(array $attributes): string
     {
         $html = '';
-        foreach ($attributesArray as $key => $attribute) {
-            $spacer = strlen($html) ? ' ' : '';
+        foreach ($attributes as $key => $attribute) {
+            $spacer = $html ? ' ' : '';
             if ($key && is_string($key)) {
                 $html .= $spacer . $key . ($attribute ? '="' . $attribute . '"' : '');
             } else {
@@ -113,6 +86,6 @@ class HtmlAttributes extends HtmlHelper
             }
         }
 
-        return strlen($html) ? ' ' . $html : '';
+        return ($html ? ' ' : '') . $html;
     }
 }

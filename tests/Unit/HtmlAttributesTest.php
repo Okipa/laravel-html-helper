@@ -9,9 +9,10 @@ use stdClass;
 
 class HtmlAttributesTest extends HtmlHelperTestCase
 {
-    public function testSuccessRenderAttributesHtmlFromHelper()
+    /** @test */
+    public function it_generates_html_attributes_from_helper_call(): void
     {
-        $html = htmlAttributes(
+        $html = html_attributes(
             'attribute1Value',
             ['attribute2Key' => 'attribute2Value'],
             ['attribute3Key' => null],
@@ -23,7 +24,7 @@ class HtmlAttributesTest extends HtmlHelperTestCase
             ['attribute10Key' => ['attribute11Value']],
             ['attribute12Key' => '']
         );
-        $this->assertEquals(
+        self::assertEquals(
             ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value '
             . 'attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" '
             . 'attribute10Key attribute11Value attribute12Key',
@@ -31,7 +32,8 @@ class HtmlAttributesTest extends HtmlHelperTestCase
         );
     }
 
-    public function testSuccessRenderAttributesHtmlFromClass()
+    /** @test */
+    public function it_generates_html_attributes_from_class_call(): void
     {
         $html = app(HtmlAttributes::class)->render(
             'attribute1Value',
@@ -45,7 +47,7 @@ class HtmlAttributesTest extends HtmlHelperTestCase
             ['attribute10Key' => ['attribute11Value']],
             ['attribute12Key' => '']
         );
-        $this->assertEquals(
+        self::assertEquals(
             ' attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value '
             . 'attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key '
             . 'attribute11Value attribute12Key',
@@ -53,35 +55,40 @@ class HtmlAttributesTest extends HtmlHelperTestCase
         );
     }
 
-    public function testFailRenderAttributesHtmlWithIntGiven()
+    /** @test */
+    public function it_triggers_exception_with_object(): void
     {
         $this->expectException(Exception::class);
-        classTag(htmlAttributes(10));
+        html_attributes(new stdClass());
     }
 
-    public function testFailRenderAttributesHtmlWithObjectGiven()
+    /** @test */
+    public function it_triggers_exception_with_double(): void
     {
         $this->expectException(Exception::class);
-        htmlAttributes(new stdClass());
+        html_attributes(12.7);
     }
 
-    public function testFailRenderAttributesHtmlWithDoubleGiven()
+    /** @test */
+    public function it_triggers_exception_with_bool(): void
     {
         $this->expectException(Exception::class);
-        htmlAttributes(12.7);
+        html_attributes(true);
     }
 
-    public function testFailRenderAttributesHtmlWithBooleanGiven()
+    /** @test */
+    public function it_triggers_exception_with_int(): void
     {
         $this->expectException(Exception::class);
-        htmlAttributes(true);
+        html_classes(html_attributes(10));
     }
 
-    public function testRenderedHtml()
+    /** @test */
+    public function it_renders_html_attributes_in_view(): void
     {
-        view()->addNamespace('htmlHelper', 'tests/views');
-        $html = view('htmlHelper::htmlAttributes')->render();
-        $this->assertStringContainsString(
+        view()->addNamespace('html_helper', 'tests/views');
+        $html = view('html_helper::html-attributes')->render();
+        self::assertStringContainsString(
             '<div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value ' .
             'attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key '
             . 'attribute11Value attribute12Key></div>',
@@ -89,10 +96,11 @@ class HtmlAttributesTest extends HtmlHelperTestCase
         );
     }
 
-    public function testHtmlNoAttributesRenderedHtml()
+    /** @test */
+    public function it_renders_no_html_attributes_in_view(): void
     {
-        view()->addNamespace('htmlHelper', 'tests/views');
-        $html = view('htmlHelper::noHtmlAttributes')->render();
-        $this->assertStringContainsString('<div></div>', $html);
+        view()->addNamespace('html_helper', 'tests/views');
+        $html = view('html_helper::no-html-attributes')->render();
+        self::assertStringContainsString('<div></div>', $html);
     }
 }

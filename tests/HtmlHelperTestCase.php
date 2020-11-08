@@ -7,14 +7,7 @@ use Orchestra\Testbench\TestCase;
 
 abstract class HtmlHelperTestCase extends TestCase
 {
-    /**
-     * Get package providers.
-     *
-     * @param \Illuminate\Foundation\Application $app
-     *
-     * @return array
-     */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [HtmlHelperServiceProvider::class];
     }

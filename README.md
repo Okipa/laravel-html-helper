@@ -41,12 +41,12 @@ composer require "okipa/laravel-html-helper:^1.3"
 
 ## API
 
-### `classTag(...$classList) : HtmlString`
+### `html_classes(...$classList) : HtmlString`
 
 In you view :
 
 ```blade
-<div{{ classTag(
+<div{{ html_classes(
     'class1',
     ['class2', 'class3', null],
     null,
@@ -62,14 +62,14 @@ Will produce :
 <div class="class1 class2 class3 class4 class5 class6 7"></div>
 ```
 
-In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlClassTag)->render()` method.
+In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlClasses)->render()` method.
 
-### `htmlAttributes(...$attributesList) : HtmlString`
+### `html_attributes(...$attributesList) : HtmlString`
 
 In you view : 
 
 ```blade
-<div{{ htmlAttributes(
+<div{{ html_attributes(
     'attribute1Value',
     ['attribute2Key' => 'attribute2Value'],
     ['attribute3Key' => null],
