@@ -10,7 +10,7 @@ tools:
   php_analyzer: true
   php_code_sniffer:
     config:
-      standard: PSR4
+      standard: PSR12
     filter:
       paths: ['src']
   sensiolabs_security_checker: true
