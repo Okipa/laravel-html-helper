@@ -2,10 +2,10 @@ checks:
   php: true
 build:
   nodes:
-    environment:
-      php:
-        version: 8.0
     analysis:
+      environment:
+        php:
+          version: 8.0 d
       tests:
         override: [php-scrutinizer-run]
 filter:
