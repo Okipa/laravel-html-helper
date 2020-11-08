@@ -38,7 +38,7 @@ Useful helpers to dynamically generate clean HTML with Laravel.
 
 ## Installation
 
-- Install the package with composer :
+- Install the package with composer:
 
 ```bash
 composer require "okipa/laravel-html-helper:^1.3"
@@ -46,9 +46,9 @@ composer require "okipa/laravel-html-helper:^1.3"
 
 ## API
 
-### `html_classes(...$classList) : HtmlString`
+### `html_classes(...$classList): HtmlString`
 
-In you view :
+In you view:
 
 ```blade
 <div{{ html_classes(
@@ -61,7 +61,7 @@ In you view :
 ) }}></div>
 ```
 
-Will produce :
+Will produce:
 
 ```html
 <div class="class1 class2 class3 class4 class5 class6 7"></div>
@@ -69,9 +69,9 @@ Will produce :
 
 In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlClasses)->render()` method.
 
-### `html_attributes(...$attributesList) : HtmlString`
+### `html_attributes(...$attributesList): HtmlString`
 
-In you view : 
+In you view: 
 
 ```blade
 <div{{ html_attributes(
@@ -88,7 +88,7 @@ In you view :
 ) }}></div>
 ```
 
-Will produce :
+Will produce:
 
 ```html
 <div attribute1Value attribute2Key="attribute2Value" attribute3Key attribute4Value attribute5Value attribute6Value attributes7Value attribute8Value attribute9Key="attribute9Value" attribute10Key attribute11Value attribute12Key></div>
