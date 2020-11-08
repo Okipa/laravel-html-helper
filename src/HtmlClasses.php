@@ -2,12 +2,18 @@
 
 namespace Okipa\LaravelHtmlHelper;
 
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\HtmlString;
 use RuntimeException;
 
-class HtmlClasses extends HtmlHelper
+class HtmlClasses implements Htmlable
 {
+    public function toHtml(): string
+    {
+        return (string) $this->render();
+    }
+
     /**
      * @param string|int|array|null ...$classes
      *

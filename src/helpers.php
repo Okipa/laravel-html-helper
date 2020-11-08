@@ -9,7 +9,6 @@ if (! function_exists('html_classes')) {
      * @param string|int|array|null ...$classList
      *
      * @return \Illuminate\Support\HtmlString
-     * @throws \Exception
      */
     function html_classes(...$classList): HtmlString
     {
@@ -22,7 +21,6 @@ if (! function_exists('html_attributes')) {
      * @param string|array|null ...$attributesList
      *
      * @return \Illuminate\Support\HtmlString
-     * @throws \Exception
      */
     function html_attributes(...$attributesList): HtmlString
     {
