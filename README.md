@@ -28,8 +28,8 @@ Useful helpers to dynamically generate clean HTML with Laravel.
 
 - [Installation](#installation)
 - [API](#api)
-  - [classTag](#classtag)
-  - [htmlAttributes](#htmlattributes)
+  - [html_classes](#html_classes)
+  - [html_attributes](#html_attributes)
 - [Testing](#testing)
 - [Changelog](#changelog)
 - [Contributing](#contributing)
@@ -41,12 +41,12 @@ Useful helpers to dynamically generate clean HTML with Laravel.
 - Install the package with composer:
 
 ```bash
-composer require "okipa/laravel-html-helper:^1.3"
+composer require okipa/laravel-html-helper
 ```
 
 ## API
 
-### `html_classes(...$classList): HtmlString`
+### html_classes
 
 In you view:
 
@@ -69,7 +69,7 @@ Will produce:
 
 In your code, you can do exactly the same using the `(new Okipa\LaravelHtmlHelper\HtmlClasses)->render()` method.
 
-### `html_attributes(...$attributesList): HtmlString`
+### html_attributes
 
 In you view: 
 
