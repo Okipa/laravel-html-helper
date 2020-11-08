@@ -71,7 +71,7 @@ It accepts combination of strings, integers, arrays or null arguments.
 <div class="card 17 text-left bg-dark text-white"></div>
 ```
 
-You can call `app(Okipa\LaravelHtmlHelper\HtmlClasses)->render($classes)` if you want to avoid helper use.
+You can call `app(Okipa\LaravelHtmlHelper\HtmlClasses)->toHtml($classes)` if you want to avoid helper use.
 
 ### html_attributes
 
@@ -96,7 +96,7 @@ It accepts combination of strings, arrays or null arguments.
 <div data-confirm="Are you sure you want to delete this line?" data-drag-drop required></div>
 ```
 
-You can call `app(Okipa\LaravelHtmlHelper\HtmlAttributes)->render($attributes)` if you want to avoid helper use.
+You can call `app(Okipa\LaravelHtmlHelper\HtmlAttributes)->toHtml($attributes)` if you want to avoid helper use.
 
 ## Testing
 

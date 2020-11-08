@@ -12,7 +12,7 @@ if (! function_exists('html_classes')) {
      */
     function html_classes(...$classList): HtmlString
     {
-        return app(HtmlClasses::class)->render(...$classList);
+        return app(HtmlClasses::class)->toHtml(...$classList);
     }
 }
 
@@ -24,6 +24,6 @@ if (! function_exists('html_attributes')) {
      */
     function html_attributes(...$attributesList): HtmlString
     {
-        return app(HtmlAttributes::class)->render(...$attributesList);
+        return app(HtmlAttributes::class)->toHtml(...$attributesList);
     }
 }

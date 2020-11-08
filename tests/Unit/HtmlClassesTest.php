@@ -27,7 +27,7 @@ class HtmlClassesTest extends HtmlHelperTestCase
     /** @test */
     public function it_generates_html_classes_from_class_call(): void
     {
-        $html = app(HtmlClasses::class)->render(
+        $html = app(HtmlClasses::class)->toHtml(
             'class1',
             ['class2', 'class3', null],
             null,
@@ -71,7 +71,7 @@ class HtmlClassesTest extends HtmlHelperTestCase
     public function it_renders_html_classes_in_view(): void
     {
         view()->addNamespace('html_helper', 'tests/views');
-        $html = view('html_helper::html-classes')->render();
+        $html = view('html_helper::html-classes')->toHtml();
         self::assertStringContainsString('<div class="class1 class2 class3 class4 class5 class6 7"></div>', $html);
     }
 }
