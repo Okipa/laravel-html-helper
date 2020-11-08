@@ -2,7 +2,6 @@
 <ruleset name="PSR12">
     <description>PSR-12 validation</description>
     <file>./src</file>
-    <arg name="colors"></arg>
     <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
         <exclude-pattern>./tests/*</exclude-pattern>
     </rule>
