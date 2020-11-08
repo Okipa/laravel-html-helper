@@ -14,10 +14,15 @@ Useful helpers to dynamically generate clean HTML with Laravel.
 
 | Laravel | PHP | Package |
 |---|---|---|
+| ^7.* | ^7.4 | ^2.0 |
 | ^7.* | ^7.4 | ^1.4 |
 | ^5.8 | ^7.2 | ^1.3 |
 | ^5.5 | ^7.2 | ^1.2 |
 | ^5.5 | ^7.1 | ^1.0 |
+
+## Upgrade guide
+
+* [From v1 to V2](/docs/upgrade-guides/from-v1-to-v2.md)
 
 ## Table of Contents
 
