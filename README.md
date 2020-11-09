@@ -7,7 +7,6 @@
 [![Build status](https://github.com/Okipa/laravel-html-helper/workflows/CI/badge.svg)](https://github.com/Okipa/laravel-html-helper/actions)
 [![Coverage Status](https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master)](https://coveralls.io/github/Okipa/laravel-html-helper?branch=master)
 
-
 Useful helpers to dynamically generate clean HTML with Laravel.
 
 ## Compatibility
