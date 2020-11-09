@@ -51,7 +51,7 @@
             "vendor/bin/phpcs",
             "vendor/bin/phpmd src text phpmd.xml",
             "vendor/bin/phpstan analyse --memory-limit=-1 --error-format=table",
-            "vendor/bin/phpunit -d memory_limit=-1 --testdox"
+            "vendor/bin/phpunit -d memory_limit=-1 --testdox --coverage-text"
         ]
     },
     "config": {
