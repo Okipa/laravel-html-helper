@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4||^8.0",
         "illuminate/support": "^7.0||^8.0"
     },
     "require-dev": {
@@ -50,8 +50,8 @@
             "vendor/bin/phpcbf",
             "vendor/bin/phpcs",
             "vendor/bin/phpmd src text phpmd.xml",
-            "vendor/bin/phpstan analyse",
-            "vendor/bin/phpunit"
+            "vendor/bin/phpstan analyse --memory-limit=-1 --error-format=table",
+            "vendor/bin/phpunit -d memory_limit=-1 --testdox --coverage-text"
         ]
     },
     "config": {

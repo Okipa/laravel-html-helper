@@ -2,30 +2,28 @@
 
 use Illuminate\Support\HtmlString;
 use Okipa\LaravelHtmlHelper\HtmlAttributes;
-use Okipa\LaravelHtmlHelper\HtmlClassTag;
+use Okipa\LaravelHtmlHelper\HtmlClasses;
 
-if (! function_exists('classTag')) {
+if (! function_exists('html_classes')) {
     /**
-     * @param mixed ...$classList
+     * @param string|int|array|null ...$classList
      *
      * @return \Illuminate\Support\HtmlString
-     * @throws \Exception
      */
-    function classTag(...$classList): HtmlString
+    function html_classes(...$classList): HtmlString
     {
-        return (new HtmlClassTag)->render(...$classList);
+        return app(HtmlClasses::class)->toHtml(...$classList);
     }
 }
 
-if (! function_exists('htmlAttributes')) {
+if (! function_exists('html_attributes')) {
     /**
-     * @param mixed ...$attributesList
+     * @param string|array|null ...$attributesList
      *
      * @return \Illuminate\Support\HtmlString
-     * @throws \Exception
      */
-    function htmlAttributes(...$attributesList): HtmlString
+    function html_attributes(...$attributesList): HtmlString
     {
-        return (new HtmlAttributes)->render(...$attributesList);
+        return app(HtmlAttributes::class)->toHtml(...$attributesList);
     }
 }
