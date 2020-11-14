@@ -1,20 +1,29 @@
-# Laravel Html Helper
+![Laravel HTML Helper](/docs/laravel-html-helper.png)
+<p align="center">
+    <a href="https://github.com/Okipa/laravel-html-helper/releases" title="Latest Stable Version">
+        <img src="https://img.shields.io/github/release/Okipa/laravel-html-helper.svg?style=flat-square" alt="Latest Stable Version">
+    </a>
+    <a href="https://packagist.org/packages/Okipa/laravel-html-helper" title="Total Downloads">
+        <img src="https://img.shields.io/packagist/dt/okipa/laravel-html-helper.svg?style=flat-square" alt="Total Downloads">
+    </a>
+    <a href="https://github.com/Okipa/laravel-html-helper/actions" title="Build Status">
+        <img src="https://github.com/Okipa/laravel-html-helper/workflows/CI/badge.svg" alt="Build Status">
+    </a>
+    <a href="https://coveralls.io/github/Okipa/laravel-html-helper?branch=master" title="Coverage Status">
+        <img src="https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master" alt="Coverage Status">
+    </a>
+    <a href="https://img.shields.io/badge/License-MIT-blue.svg" title="License: MIT">
+        <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+    </a>
+</p>
 
-[![Source Code](https://img.shields.io/badge/source-okipa/laravel--html--helper-blue.svg)](https://github.com/Okipa/laravel-html-helper)
-[![Latest Version](https://img.shields.io/github/release/okipa/laravel-html-helper.svg?style=flat-square)](https://github.com/Okipa/laravel-html-helper/releases)
-[![Total Downloads](https://img.shields.io/packagist/dt/okipa/laravel-html-helper.svg?style=flat-square)](https://packagist.org/packages/okipa/laravel-html-helper)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Build status](https://github.com/Okipa/laravel-html-helper/workflows/CI/badge.svg)](https://github.com/Okipa/laravel-html-helper/actions)
-[![Coverage Status](https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master)](https://coveralls.io/github/Okipa/laravel-html-helper?branch=master)
-
-Useful helpers to dynamically generate clean HTML with Laravel.
+Easily handle conditional HTML generation with the following helpers.
 
 ## Compatibility
 
 | Laravel | PHP | Package |
 |---|---|---|
 | ^7.* | ^7.4 | ^2.0 |
-| ^7.* | ^7.4 | ^1.4 |
 | ^5.8 | ^7.2 | ^1.3 |
 | ^5.5 | ^7.2 | ^1.2 |
 | ^5.5 | ^7.1 | ^1.0 |
@@ -44,8 +53,6 @@ composer require okipa/laravel-html-helper
 ```
 
 ## API
-
-Easily handle conditional HTML generation with the following helpers.
 
 ### html_classes
 
