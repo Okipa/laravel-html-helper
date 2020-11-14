@@ -2,9 +2,11 @@
 
 ## [2.0.0](https://github.com/Okipa/laravel-html-helper/compare/1.4.0...2.0.0)
 
-2020-11-08
+2020-11-14
 
-* Added support for PHP 8
+* Added PHP 8 support
+* Removed Scrutinizer analysis
+* Updated PHPCS checker and fixer norm to PSR-12
 * Helpers naming breaking changes
 
 :point_right: [See the upgrade guide](/docs/upgrade-guides/from-v1-to-v2.md)
