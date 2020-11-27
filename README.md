@@ -12,12 +12,17 @@
     <a href="https://coveralls.io/github/Okipa/laravel-html-helper?branch=master" title="Coverage Status">
         <img src="https://coveralls.io/repos/github/Okipa/laravel-html-helper/badge.svg?branch=master" alt="Coverage Status">
     </a>
-    <a href="https://img.shields.io/badge/License-MIT-blue.svg" title="License: MIT">
+    <a href="/LICENSE.md" title="License: MIT">
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
     </a>
 </p>
 
 Easily handle conditional HTML generation with the following helpers.
+
+Found this package helpful? Please consider supporting my work!
+
+[![Donate](https://img.shields.io/badge/Buy_me_a-Ko--fi-ff5f5f.svg)](https://ko-fi.com/arthurlorent)
+[![Donate](https://img.shields.io/badge/Donate_on-PayPal-green.svg)](https://paypal.me/arthurlorent)
 
 ## Compatibility
 
