@@ -17,6 +17,8 @@
     </a>
 </p>
 
+**⚠️ This package has been abandonned ⚠️**
+
 Easily handle conditional HTML generation with the following helpers.
 
 Found this package helpful? Please consider supporting my work!
